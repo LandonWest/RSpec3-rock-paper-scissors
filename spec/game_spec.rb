@@ -37,4 +37,19 @@ describe Game do
       expect(subject.get_user_input).to eq('rock')
     end
   end
+
+  describe '#play' do
+
+    before do
+      allow(subject).to receive(:get_user_input).and_return('paper')
+      allow(subject).to receive(:rand_choice).and_return('rock')
+    end
+
+    let(:message) do
+      "paper beats rock\n"
+    end
+    it 'take in the users input and output a winning message' do
+      expect{subject.play}.to output(message).to_stdout
+    end
+  end
 end

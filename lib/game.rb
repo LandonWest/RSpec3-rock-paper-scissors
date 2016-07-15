@@ -19,4 +19,14 @@ class Game
     gets.chomp
   end
 
+  def play
+    puts call(get_user_input, rand_choice)
+  end
+
+  private
+
+  def rand_choice
+    COMBINATIONS.keys.sample
+  end
+
 end
