@@ -14,4 +14,9 @@ class Game
     end
   end
 
+  def get_user_input
+    puts "Please select rock, paper, or scissors"
+    gets.chomp
+  end
+
 end
